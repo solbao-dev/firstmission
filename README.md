@@ -205,11 +205,44 @@ drwx------  2 greeny10031213  greeny10031213  64 Apr  3 02:49 project
 ---
 
 ### ② Docker 설치 및 기본 점검
-> **솔바오의 이해**: "요리 도구들이 가득 찬 박스(컨테이너)를 관리하는 로봇을 깨우는 과정!"
-
+> **솔바오의 이해**: "요리 로봇(Docker)을 깨우고, 마트에서 첫 번째 요리 세트(Hello-world)를 잘 사왔는지 확인하는 과정!"
 ```bash
-# 1. 도커 엔진 상태 확인 (전체 다 복사하지 말고 앞부분 10줄 정도만!)
+# 1. 도커 엔진 상태 확인 
 greeny10031213@c5r4s7 mission % docker info
+Client:
+ Version:    28.5.2
+ Context:    orbstack
 
-# 2. 테스트용 컨테이너 실행 (Hello World 메시지가 나오면 성공!)
+Server Version: 28.5.2
+Operating System: OrbStack
+
+Client Version: 내 도커가 몇 버전인지
+Server Version: 연결된 엔진이 몇 버전인지
+Operating System: OrbStack(혹은 Linux)인지 확인
+
+# 2. 테스트용 컨테이너 실행
+
 greeny10031213@c5r4s7 mission % docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+4f55086f7dd0: Pull complete 
+Digest: sha256:452a468a4bf985040037cb6d5392410206e47db9bf5b7278d281f94d1c2d0931
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+---
+
+### ③ Dockerfile 기반 커스텀 이미지 제작 및 빌드
+> **솔바오의 이해**: "나만의 요리 레시피(Dockerfile)를 적어서, 그대로 요리 세트(이미지)를 만드는 과정!"
+```bash
+
+# 1. Dockerfile 내용 확인 (cat 명령어로 내가 적은 레시피 보여주기)
+greeny10031213@c5r4s7 mission % cat Dockerfile
+
+# 2. 이미지 빌드 실행 (나만의 요리 세트 만들기)
+greeny10031213@c5r4s7 mission % docker build -t my-workstation .
+
+# 3. 만들어진 이미지 목록 확인
+greeny10031213@c5r4s7 mission % docker images
