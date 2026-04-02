@@ -75,7 +75,7 @@
 ### ① 터미널 조작 및 권한 관리
 
 ```bash
-#현재 위치 확인, 폴더생성, 폴더로이동, 문서생성, 생성한"문서"에대한 권한확인, 권한변경, 바뀐권한확인
+#현재 위치 확인, 디렉토리생성(-p 부모님옵션,~/ 절대주소), 디렉토리로이동, 빈파일생성, 파일에대한 권한확인, 권한변경, 바뀐권한확인
 
 greeny10031213@c5r4s7 ~ % pwd
 /Users/greeny10031213
@@ -96,6 +96,28 @@ greeny10031213@c5r4s7 mission % open .
 greeny10031213@c5r4s7 mission %
 ```
 
+```bash
+#현재위치확인, 파일에 내용넣기,파일내용확인, 파일복사, 파일이름바꾸기, 파일삭제, 목록확인(숨긴파일포함), 디렉토리생성(-p옵션없이),권한확인,권한변경,바뀐권한확인 
+
+greeny10031213@c5r4s7 mission % pwd
+/Users/greeny10031213/codyssey/mission
+greeny10031213@c5r4s7 mission % echo "안녕하세요 솔바오입니다" > solbao.txt
+greeny10031213@c5r4s7 mission % cat solbao.txt
+안녕하세요 솔바오입니다
+greeny10031213@c5r4s7 mission % open.
+zsh: command not found: open.
+greeny10031213@c5r4s7 mission % open .
+greeny10031213@c5r4s7 mission % cp solbao.txt solbao_copy.txt
+greeny10031213@c5r4s7 mission % mv solbao_copy.txt renamed.txt
+greeny10031213@c5r4s7 mission % open .
+greeny10031213@c5r4s7 mission % rm renamed.txt
+greeny10031213@c5r4s7 mission % ls -la
+total 8
+drwxr-xr-x  3 greeny10031213  greeny10031213   96 Apr  3 00:42 .
+drwxr-xr-x  4 greeny10031213  greeny10031213  128 Apr  2 23:27 ..
+-rwxr-xr-x@ 1 greeny10031213  greeny10031213   35 Apr  3 00:39 solbao.txt
+
+```
 ### 🌸① 솔바오의 이해버전
 ```text
 🏗️ 1단계: 터미널과 친해지기 ( 컴퓨터와 대화하기 ! > '마우스 없이 글로 시키는 심부름' )
