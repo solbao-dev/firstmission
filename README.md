@@ -11,20 +11,18 @@
 
 ### 🌸 솔바오의 이해버전
 ```text
-- **미션**: 나만의 요리 작업대(워크스테이션) 만들기! 🧑‍🍳
-- **미션의 핵심**: 내가 명령어로 컴퓨터를 조작하고, 그 과정을 기록하는 것
+- 미션 : 나만의 요리 작업대(워크스테이션) 만들기! 🧑‍🍳
+- 미션의 핵심: 내가 명령어로 컴퓨터를 조작하고, 그 과정을 기록하는 것
 ```
-
 
 ### 🌸 시작에 앞서, 내가 앞으로 기술해야할 마크다운 문법 꿀팁
 ```text
-- ###: 제목을 만들 때 , # 개수가 많아질수록 글씨가 작아지는 소제목이 됨 (Max 6개까지 사용할 수 있지만, 보통 가독성을 위해 1개-3개 사용)
-- -: 목록을 만들 떄, 앞에 대시 
-- **글자**: 볼드체 , 단 코드블록에서는 적용안됨. 왜? 코드블록은 말그대로 코드를 있는 그대로 보여주는 공간이기 때문. (주석활용 #)
-- 이모지: 스마트폰에서 이모지 넣는 거랑 똑같이 , 맥(Control + Command + Space) 단축키로 넣기
+- ### : 제목을 만들 때 , # 개수가 많아질수록 글씨가 작아지는 소제목이 됨 (Max 6개까지 사용할 수 있지만, 보통 가독성을 위해 1개-3개 사용)
+- - : 목록을 만들 떄, 앞에 대시 
+- **글자** : 볼드체 , 단 코드블록에서는 적용안됨. 왜? 코드블록은 말그대로 코드를 있는 그대로 보여주는 공간이기 때문. (주석활용 #)
+- 이모지 : 스마트폰에서 이모지 넣는 거랑 똑같이 , 맥(Control + Command + Space) 단축키로 넣기
 - 백틱 ``` 3개 : 코드블록 
 ```
-
 ---
 
 ## 2) 실행 환경
@@ -205,6 +203,7 @@ drwx------  2 greeny10031213  greeny10031213  64 Apr  3 02:49 project
 ---
 
 ### ② Docker 설치 및 기본 점검
+
 > **솔바오의 이해**: "요리 로봇(Docker)을 깨우고, 마트에서 첫 번째 요리 세트(Hello-world)를 잘 사왔는지 확인하는 과정!"
 ```bash
 # 1. 도커 버전 확인 (⭐️도커 데몬이 실행중이지 않아도 출력 가능)
@@ -235,20 +234,58 @@ This message shows that your installation appears to be working correctly.
 ```
 ---
 ### ② Docker 기본 운영 명령 수행
+
 > **솔바오의 이해**: "마트에 어떤 물건(이미지)이 있는지, 주방에 어떤 요리(컨테이너)가 돌아가는지 감시하기!"
 ```bash
 # 1. 이미지 목록 확인
-docker images
+
+greeny10031213@c5r4s7 mission % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED             SIZE
+my-workstation   latest    cf77719ba3d7   About an hour ago   141MB
+hello-world      latest    e2ac70e7319a   9 days ago          10.1kB
 
 # 2. 실행 중/전체 컨테이너 목록 확인
-docker ps
-docker ps -a
+
+greeny10031213@c5r4s7 mission % docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+greeny10031213@c5r4s7 mission % docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED       STATUS                   PORTS     NAMES
+2c0f37efe6ff   hello-world   "/hello"   2 hours ago   Exited (0) 2 hours ago             sweet_robinson
 
 # 3. 컨테이너 운영 상태(리소스) 확인
-docker stats --no-stream
+greeny10031213@c5r4s7 mission % docker stats --no-stream
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
 
 # 4. 컨테이너 로그 확인 (hello-world 실행 기록)
-docker logs [컨테이너_ID]
+greeny10031213@c5r4s7 mission % docker logs 2c0f37efe6ff
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+---
+### ③ 컨테이너 실행 및 내부 진입 실습
+> **솔바오의 이해**: "상자(컨테이너) 안으로 직접 들어가서 심부름 시키기!"
+```bash
+
 ### ③ Dockerfile 기반 커스텀 이미지 제작 및 빌드
 > **솔바오의 이해**: "나만의 요리 레시피(Dockerfile)를 적어서, 그대로 요리 세트(이미지)를 만드는 과정!"
 ```bash
