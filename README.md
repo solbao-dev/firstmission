@@ -207,12 +207,13 @@ drwx------  2 greeny10031213  greeny10031213  64 Apr  3 02:49 project
 ### ② Docker 설치 및 기본 점검
 > **솔바오의 이해**: "요리 로봇(Docker)을 깨우고, 마트에서 첫 번째 요리 세트(Hello-world)를 잘 사왔는지 확인하는 과정!"
 ```bash
-# 1. 도커 엔진 상태 확인 
-greeny10031213@c5r4s7 mission % docker info
-Client:
- Version:    28.5.2
- Context:    orbstack
+# 1. 도커 버전 확인 (⭐️도커 데몬이 실행중이지 않아도 출력 가능)
+greeny10031213@c5r4s7 mission % docker --version
+Docker version 28.5.2, build ecc6942
 
+# 2. 도커 데몬 상태 확인 ((⭐️도커 데몬이 실행중이어야만 전체 정보 출력 가능))
+greeny10031213@c5r4s7 mission % docker info
+ClientVersion:    28.5.2
 Server Version: 28.5.2
 Operating System: OrbStack
 
@@ -220,7 +221,7 @@ Client Version: 내 도커가 몇 버전인지
 Server Version: 연결된 엔진이 몇 버전인지
 Operating System: OrbStack(혹은 Linux)인지 확인
 
-# 2. 테스트용 컨테이너 실행
+# 3. 테스트용 컨테이너 실행
 
 greeny10031213@c5r4s7 mission % docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -233,7 +234,21 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 ---
+### ② Docker 기본 운영 명령 수행
+> **솔바오의 이해**: "마트에 어떤 물건(이미지)이 있는지, 주방에 어떤 요리(컨테이너)가 돌아가는지 감시하기!"
+```bash
+# 1. 이미지 목록 확인
+docker images
 
+# 2. 실행 중/전체 컨테이너 목록 확인
+docker ps
+docker ps -a
+
+# 3. 컨테이너 운영 상태(리소스) 확인
+docker stats --no-stream
+
+# 4. 컨테이너 로그 확인 (hello-world 실행 기록)
+docker logs [컨테이너_ID]
 ### ③ Dockerfile 기반 커스텀 이미지 제작 및 빌드
 > **솔바오의 이해**: "나만의 요리 레시피(Dockerfile)를 적어서, 그대로 요리 세트(이미지)를 만드는 과정!"
 ```bash
