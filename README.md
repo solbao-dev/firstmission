@@ -183,6 +183,12 @@ drwx------  2 greeny10031213  greeny10031213  64 Apr  3 02:49 project
 - mkdir codyssey: "codyssey라는 이름의 새 폴더 만들어."
 - cd codyssey: "codyssey 폴더 안으로 들어가."
 - touch solbao.txt : "solbao.txt 라는 빈 문서 하나 만들어."
+- echo : 파일에 내용 넣기 (요리 재료 넣기!)
+- cat : 파일 내용 확인하기
+- cp : 파일 복사하기
+- mv : 파일 이름 바꾸기
+- rm : 파일 삭제하기 (폴더는 -r추가)
+- ls -l : 권한 확인하기 (폴더는 -d추가)
 
 2. 권한(Permission) 이해하기
 
