@@ -385,8 +385,33 @@ For more examples and ideas, visit:
 ```
 ---
 ### ③ 컨테이너 실행 및 내부 진입 실습
+
 > **솔바오의 이해**: "상자(컨테이너) 안으로 직접 들어가서 심부름 시키기!"
 ```bash
+
+# 1. Ubuntu 컨테이너 실행 및 내부 진입
+
+greeny10031213@c5r4s7 mission % docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+817807f3c64e: Already exists 
+Digest: sha256:186072bba1b2f436cbb91ef2567abca677337cfc786c86e107d25b7072feef0c
+Status: Downloaded newer image for ubuntu:latest
+root@62e4821a6c05:/# 
+
+# 2. 컨테이너 내부 명령 수행 (컨테이너 안에서 입력)
+
+root@62e4821a6c05:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+root@62e4821a6c05:/# echo "Hello from inside Ubuntu"
+Hello from inside Ubuntu
+
+root@62e4821a6c05:/# exit
+exit
+greeny10031213@c5r4s7 mission % 
+```
+
 
 ### ③ Dockerfile 기반 커스텀 이미지 제작 및 빌드
 > **솔바오의 이해**: "나만의 요리 레시피(Dockerfile)를 적어서, 그대로 요리 세트(이미지)를 만드는 과정!"
