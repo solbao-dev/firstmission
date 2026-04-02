@@ -34,9 +34,24 @@
   ProductVersion: 15.7.4
   BuildVersion:   24G517
 
-- **Shell**: (터미널에 `echo $SHELL` 친 결과 복사)
-- **Docker Version**: (터미널에 `docker --version` 친 결과 복사)
-- **Git Version**: (터미널에 `git --version` 친 결과 복사)
+- **Shell**:
+  ```text
+  /bin/zsh
+  ```
+- **Terminal**: 
+  ```text
+  Apple Terminal Version 2.14 (455.1)
+  ```
+  
+- **Docker Version**:
+  ```text
+  Docker version 28.5.2, build ecc6942
+  ```
+  
+- **Git Version**:
+  ```text
+  git version 2.53.0
+  ```
 
 ## 3) 수행 항목 체크리스트
 - [x] 터미널 기본 조작 (pwd, ls, mkdir 등)
