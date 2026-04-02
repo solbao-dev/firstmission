@@ -73,7 +73,10 @@
 ## 5) 수행 로그 (명령어 및 출력)
 
 ### ① 터미널 조작 및 권한 관리
+
 ```bash
+현재 위치 확인, 폴더생성, 폴더로이동, 문서생성, 생성한📋"문서"에대한 권한확인, 권한변경, 바뀐권한확인
+
 greeny10031213@c5r4s7 ~ % pwd
 /Users/greeny10031213
 greeny10031213@c5r4s7 ~ % mkdir -p ~/codyssey/mission
@@ -93,15 +96,22 @@ greeny10031213@c5r4s7 mission % open .
 greeny10031213@c5r4s7 mission %
 ```
 
-### 🌸 솔바오의 이해버전
+### 🌸① 솔바오의 이해버전
 ```text
-pwd: "나 지금 어디 있어?" (현재 경로 확인)
+🏗️ 1단계: 터미널과 친해지기 ( 컴퓨터와 대화하기 ! > '마우스 없이 글로 시키는 심부름' )
 
-ls -la: "여기 뭐가 있어? 숨겨진 것도 다 보여줘."
+1. 꼭 알아야 할 기초 명령어
 
-mkdir codyssey: "codyssey라는 이름의 새 폴더 만들어."
+- pwd: "나 지금 어디 있어?" (현재 경로(위치) 확인)
+- ls -la: "여기 뭐가 있어? 숨겨진 것도 다 보여줘." 
+- mkdir codyssey: "codyssey라는 이름의 새 폴더 만들어."
+- cd codyssey: "codyssey 폴더 안으로 들어가."
+- touch solbao.txt : "solbao.txt 라는 빈 문서 하나 만들어."
 
-cd codyssey: "codyssey 폴더 안으로 들어가."
+2. 권한(Permission) 이해하기
 
-touch README.md: "README.md라는 빈 문서 하나 만들어."
+- 파일에는 '읽기(r)', '쓰기(w)', '실행(x)' 권한이 있다.
+- 755 / chmod 755 [파일명] : "나는 다 할 수 있고, 남들은 읽고 실행만 해!"
+- 644 / chmod 644 [파일명] : "나는 읽고 쓸 수 있고, 남들은 읽기만 해!"
+
 ```
