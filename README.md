@@ -55,7 +55,7 @@
 
 ## 3) 수행 항목 체크리스트
 - [x] 터미널 기본 조작 (pwd, ls, mkdir 등)
-- [ ] 파일 및 디렉토리 권한 변경 실습 (chmod)
+- [x] 파일 및 디렉토리 권한 변경 실습 (chmod)
 - [ ] Docker 설치 및 기본 점검 (docker info)
 - [ ] 기존 Dockerfile 기반 커스텀 이미지 제작 및 빌드
 - [ ] 컨테이너 실행 및 포트 매핑 접속 확인
@@ -74,4 +74,34 @@
 
 ### ① 터미널 조작 및 권한 관리
 ```bash
-# 여기에 터미널 작업 로그를 복사해서 넣어줘!
+greeny10031213@c5r4s7 ~ % pwd
+/Users/greeny10031213
+greeny10031213@c5r4s7 ~ % mkdir -p ~/codyssey/mission
+greeny10031213@c5r4s7 ~ % cd ~/codyssey/mission
+greeny10031213@c5r4s7 mission % 
+greeny10031213@c5r4s7 mission % cd ~/codyssey/mission
+greeny10031213@c5r4s7 mission % touch solbao.txt
+greeny10031213@c5r4s7 mission % ls -l
+total 0
+-rw-r--r--  1 greeny10031213  greeny10031213  0 Apr  2 23:30 solbao.txt
+greeny10031213@c5r4s7 mission % chmod 755 solbao.txt
+greeny10031213@c5r4s7 mission % ls -l
+total 0
+-rwxr-xr-x  1 greeny10031213  greeny10031213  0 Apr  2 23:30 solbao.txt
+greeny10031213@c5r4s7 mission % open .
+greeny10031213@c5r4s7 mission % open .
+greeny10031213@c5r4s7 mission %
+```
+
+### 🌸 솔바오의 이해버전
+```text
+pwd: "나 지금 어디 있어?" (현재 경로 확인)
+
+ls -la: "여기 뭐가 있어? 숨겨진 것도 다 보여줘."
+
+mkdir codyssey: "codyssey라는 이름의 새 폴더 만들어."
+
+cd codyssey: "codyssey 폴더 안으로 들어가."
+
+touch README.md: "README.md라는 빈 문서 하나 만들어."
+```
