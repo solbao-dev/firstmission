@@ -412,16 +412,56 @@ exit
 greeny10031213@c5r4s7 mission % 
 ```
 
-
+---
 ### ③ Dockerfile 기반 커스텀 이미지 제작 및 빌드
+
 > **솔바오의 이해**: "나만의 요리 레시피(Dockerfile)를 적어서, 그대로 요리 세트(이미지)를 만드는 과정!"
 ```bash
 
 # 1. Dockerfile 내용 확인 (cat 명령어로 내가 적은 레시피 보여주기)
+
 greeny10031213@c5r4s7 mission % cat Dockerfile
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y figlet
+CMD ["figlet", "SOLBAO WORKSTATION"]
+
 
 # 2. 이미지 빌드 실행 (나만의 요리 세트 만들기)
+
 greeny10031213@c5r4s7 mission % docker build -t my-workstation .
+[+] Building 0.5s (6/6) FINISHED                                                                     docker:orbstack
+ => [internal] load build definition from Dockerfile                                                            0.1s
+ => => transferring dockerfile: 141B                                                                            0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                0.0s
+ => [internal] load .dockerignore                                                                               0.1s
+ => => transferring context: 2B                                                                                 0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest                                                                  0.0s
+ => CACHED [2/2] RUN apt-get update && apt-get install -y figlet                                                0.0s
+ => exporting to image                                                                                          0.1s
+ => => exporting layers                                                                                         0.0s
+ => => writing image sha256:cf77719ba3d7b3ff5a224d9885ac41b45185db3f2d8c7ac1e031ecc38e365c1c                    0.0s
+ => => naming to docker.io/library/my-workstation    
 
 # 3. 만들어진 이미지 목록 확인
+
 greeny10031213@c5r4s7 mission % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED       SIZE
+my-workstation   latest    cf77719ba3d7   4 hours ago   141MB
+hello-world      latest    e2ac70e7319a   10 days ago   10.1kB
+ubuntu           latest    f794f40ddfff   5 weeks ago   78.1MB
+
+# 4. 커스텀 컨테이너 실행 및 결과 확인
+
+greeny10031213@c5r4s7 mission % docker run my-workstation
+ ____   ___  _     ____    _    ___  
+/ ___| / _ \| |   | __ )  / \  / _ \ 
+\___ \| | | | |   |  _ \ / _ \| | | |
+ ___) | |_| | |___| |_) / ___ \ |_| |
+|____/ \___/|_____|____/_/   \_\___/ 
+                                     
+__        _____  ____  _  ______ _____  _  _____ ___ ___  _   _ 
+\ \      / / _ \|  _ \| |/ / ___|_   _|/ \|_   _|_ _/ _ \| \ | |
+ \ \ /\ / / | | | |_) | ' /\___ \ | | / _ \ | |  | | | | |  \| |
+  \ V  V /| |_| |  _ <| . \ ___) || |/ ___ \| |  | | |_| | |\  |
+   \_/\_/  \___/|_| \_\_|\_\____/ |_/_/   \_\_| |___\___/|_| \_|
+
