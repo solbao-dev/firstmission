@@ -486,3 +486,11 @@ Run 'docker run --help' for more information
 greeny10031213@c5r4s7 mission % docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
+. **figlet은 글자만 보여주고 끝나는 '일회성 도구'**인데, 미션에서는 **'계속 켜져 있는 웹 서버(식당)'**를 원하기 때문이야. 그래서 포트 매핑(창구 열기)을 해도 브라우저에서 볼 게 없는 거지.
+
+[선택 A] 웹 서버 베이스 활용 (추천! ⭐)
+솔바오의 선택: Nginx라는 유명한 웹 서버 '이미 만들어진 요리'를 가져와서 내 메뉴판만 바꿨어!
+
+기존 베이스: nginx:alpine (가볍고 빠른 웹 서버 이미지)
+
+커스텀 포인트: 기본 Nginx 페이지 대신 "솔바오의 워크스테이션" 메시지가 뜨는 index.html로 교체
