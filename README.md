@@ -475,8 +475,14 @@ __        _____  ____  _  ______ _____  _  _____ ___ ___  _   _
 
 > 솔바오의 이해: "만든 요리 세트를 실제로 가동하고, 밖에서 음식을 주문(접속)할 수 있게 창구를 여는 것!"
 ```bash
+💡💫Trouble shooting point
 # 1. 컨테이너 실행 (8080포트 등으로 창구 개방)
 greeny10031213@c5r4s7 mission % docker run -d -p 8080:80 --name solbao-app my-workstation
+docker: Error response from daemon: Conflict. The container name "/solbao-app" is already in use by container "4231c564e91388bb3a6b76f0d6e4aa5e7d5538c0e9541316d191ccdce8c08fc4". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
 
 # 2. 실행 중인 컨테이너 상태 확인
 greeny10031213@c5r4s7 mission % docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
